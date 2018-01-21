@@ -1,0 +1,12 @@
+<div class="container">
+  <h3> Congrats </h3>
+
+  <h2> Your score is : <%= @my_score%> </h2>
+
+  <% @summary.each do |q| %>
+  Quesiton : <%= q[:question] %> <br>
+  Your Ans : <%= q[:your_ans] %> <br>
+  Actual Ans : <%= q[:actual_ans] %> <br>
+  <hr>
+  <% end %>
+</div>

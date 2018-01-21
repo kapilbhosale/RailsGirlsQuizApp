@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+<%= form_tag "/exams/#{@test.id}/submit", method: :post do %>
+  <p> details of test <b> <%= @test.name %> </b> </p>
+  <%= text_field_tag 'student_email', nil, placeholder: 'Enter your email' %>
+  <h4> Questions as follows </h4>
+
+  <% @questions.each do |question| %>
+
+    <div>
+      <h3>
+        <%= question.description %>
+      </h3>
+        <div><%=radio_button_tag "question[#{question.id}]", '1' %>
+          <%= question.option_1 %>
+        </div>
+      <div><%= radio_button_tag "question[#{question.id}]", '2' %> <%= question.option_2 %></div>
+      <div><%= radio_button_tag "question[#{question.id}]", '3' %> <%= question.option_3 %></div>
+      <div><%= radio_button_tag "question[#{question.id}]", '4' %> <%= question.option_4 %></div>
+      
+    </div>  
+  <br>
+  <% end %>
+  <%= submit_tag "Submit test" %>
+<% end %>
+</div>

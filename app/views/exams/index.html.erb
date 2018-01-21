@@ -1,0 +1,6 @@
+<h3> Available tests for you </h3>
+
+<% @tests_available.each do |test| %>
+  <%= test.name %> | <%= test.subject %> | <%= test.marks %> | <%= link_to "Appear", "/exams/#{test.id}" %>
+  <br>
+<% end %>

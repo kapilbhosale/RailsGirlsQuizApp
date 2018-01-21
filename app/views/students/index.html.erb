@@ -1,0 +1,10 @@
+<p> here list of students will appear </p>
+<p> Message is : <%= @message %> </p>
+<hr>
+
+<h3> List of student </h3>
+
+<% @students.each do |student| %>
+  <%= student.name %> | <%= student.email %> | <%= student.college %> | <%= student.marks %> 
+  <br>
+<% end %>
